@@ -45,9 +45,8 @@ app.get('/crash-test', () => {
 app.post('/signin', celebrate(validationRequestSignin), userController.login);
 app.post('/signup', celebrate(validationRequestSignup), userController.createUser);
 
-app.use(middlewareAuth);
-app.use(usersRoutes);
-app.use(cardsRoutes);
+app.use('/users', middlewareAuth, usersRoutes);
+app.use('/cards', middlewareAuth, cardsRoutes);
 
 app.use((req, res, next) => next(new NotFoundError('Запрашиваемая страница не найдена')));
 
