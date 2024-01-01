@@ -1,0 +1,8 @@
+.elements__element {
+  background-color: #fff;
+  color: #000;
+  border-radius: 10px;
+  width: 100%;
+  row-gap: 0px;
+  max-width: 550px;
+}

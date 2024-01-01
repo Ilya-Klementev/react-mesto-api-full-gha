@@ -1,0 +1,18 @@
+.header__nav-menu {
+  display: none;
+  width: 24px;
+  height: 24px;
+  background-color: rgba(0, 0, 0, 1);
+  background-image: url(../../../images/nav.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  justify-self: end;
+}
+
+@media screen and (max-width: 500px) {
+  .header__nav-menu {
+    display: block;
+  }
+}

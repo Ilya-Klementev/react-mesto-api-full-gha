@@ -1,0 +1,21 @@
+.popup__error {
+  position:absolute;
+  left: 36px;
+  color: red;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  overflow-wrap: normal;
+  z-index: 5;
+  width: 358px;
+}
+
+@media screen and (max-width: 600px) {
+  .popup__error {
+    left: 20px;
+    margin: 0;
+    height: 18px;
+    width: 240px;
+  }
+}

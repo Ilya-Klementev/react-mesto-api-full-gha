@@ -1,0 +1,14 @@
+.elements__place {
+  background-color: #fff;
+  color: black;
+  border-radius: 0 0 10px 10px;
+  height: 79px;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 42px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}

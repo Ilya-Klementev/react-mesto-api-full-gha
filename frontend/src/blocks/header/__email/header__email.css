@@ -1,0 +1,23 @@
+.header__email {
+  font-family: "Inter";
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 500;
+  margin: 0;
+  position: relative;
+  padding-top: 7px;
+  max-width: 550px;
+  text-align: end;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+}
+
+@media screen and (max-width: 500px) {
+  .header__email {
+    text-align: center;
+    padding-top: 0;
+    margin-bottom: 18px;
+  }
+}

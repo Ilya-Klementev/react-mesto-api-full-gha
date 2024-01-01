@@ -1,0 +1,19 @@
+.header__auth {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  overflow: hidden;
+ 
+}
+
+@media screen and (max-width: 935px) {
+  .header__auth {
+    margin-right: 30px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .header__auth {
+    margin-right:0;
+  }
+}
