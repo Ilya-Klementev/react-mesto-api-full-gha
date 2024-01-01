@@ -3,10 +3,10 @@ const { celebrate, Joi } = require('celebrate');
 const cardsController = require('../controllers/cards');
 const { regEx } = require('../utils/regEx');
 
-router.get('/cards', cardsController.readAllCards);
+router.get('/', cardsController.readAllCards);
 
 router.post(
-  '/cards',
+  '/',
   celebrate({
     body: Joi.object().keys({
       name: Joi.string().required().min(2).max(30),
@@ -17,7 +17,7 @@ router.post(
 );
 
 router.delete(
-  '/cards/:cardId',
+  '/:cardId',
   celebrate({
     params: Joi.object().keys({
       cardId: Joi.string().length(24).hex().required(),
@@ -27,7 +27,7 @@ router.delete(
 );
 
 router.put(
-  '/cards/:cardId/likes',
+  '/:cardId/likes',
   celebrate({
     params: Joi.object().keys({
       cardId: Joi.string().length(24).hex().required(),
@@ -37,7 +37,7 @@ router.put(
 );
 
 router.delete(
-  '/cards/:cardId/likes',
+  '/:cardId/likes',
   celebrate({
     params: Joi.object().keys({
       cardId: Joi.string().length(24).hex().required(),

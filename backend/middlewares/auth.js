@@ -6,7 +6,7 @@ const { JWT_SECRET = 'secret' } = process.env;
 const UnauthorizedError = require('./errors/UnauthorizedError');
 
 const auth = (req, res, next) => {
-  const token = req.cookies.jwt || req.headers.authorization.replace('Bearer ', '');
+  const token = req.cookies.jwt || (req.headers.authorization && req.headers.authorization.replace('Bearer ', ''));
   if (!token) {
     return next(new UnauthorizedError('Необходима авторизация'));
   }

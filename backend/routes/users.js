@@ -3,10 +3,10 @@ const { celebrate, Joi } = require('celebrate');
 const userController = require('../controllers/users');
 const { regEx } = require('../utils/regEx');
 
-router.get('/users/me', userController.readMe);
+router.get('/me', userController.readMe);
 
 router.patch(
-  '/users/me',
+  '/me',
   celebrate({
     body: Joi.object().keys({
       name: Joi.string().min(2).max(30),
@@ -17,7 +17,7 @@ router.patch(
 );
 
 router.patch(
-  '/users/me/avatar',
+  '/me/avatar',
   celebrate({
     body: Joi.object().keys({
       avatar: Joi.string().pattern(regEx).required(),
@@ -27,7 +27,7 @@ router.patch(
 );
 
 router.get(
-  '/users/:id',
+  '/:id',
   celebrate({
     params: Joi.object().keys({
       id: Joi.string().length(24).hex().required(),
@@ -35,6 +35,6 @@ router.get(
   }),
   userController.readUser,
 );
-router.get('/users', userController.readAllUsers);
+router.get('/', userController.readAllUsers);
 
 module.exports = router;
