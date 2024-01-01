@@ -5,7 +5,7 @@ const rateLimit = require('express-rate-limit');
 const cookieParser = require('cookie-parser');
 const { errors, celebrate } = require('celebrate');
 
-const { PORT = 3001, DB_URL } = process.env;
+const { PORT = 3000, DB_URL } = process.env;
 const mongoose = require('mongoose');
 
 const app = express();
