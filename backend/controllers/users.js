@@ -7,7 +7,7 @@ const ConflictError = require('../middlewares/errors/ConflictError');
 const ValidationError = require('../middlewares/errors/ValidationError');
 const UnauthorizedError = require('../middlewares/errors/UnauthorizedError');
 
-const { JWT_SECRET = 'secret', SALT_ROUNDS = 10 } = process.env;
+const { JWT_SECRET, SALT_ROUNDS = 10, NODE_ENV } = process.env;
 
 function readMe(req, res, next) {
   const { _id } = req.user;
@@ -35,7 +35,11 @@ async function login(req, res, next) {
     }
 
     const payload = { _id: user._id };
-    const token = jwt.sign(payload, JWT_SECRET, { expiresIn: '7d' });
+    const token = jwt.sign(
+      payload,
+      NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret',
+      { expiresIn: '7d' },
+    );
     res.cookie('jwt', token, { maxAge: 3600000 * 24 * 7, sameSite: true });
     return res.status(200).send({ message: 'Вы успешно вошли', token });
   } catch (error) {

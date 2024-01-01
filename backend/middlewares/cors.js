@@ -5,7 +5,7 @@ const cors = (req, res, next) => {
     'localhost:3000',
     'http://localhost:3000',
     'http://127.0.0.1:3000',
-    /(https|http)?:\/\/(?:www\.|(?!www))mesto.online.nomoredomains.work\/[a-z]+\/|[a-z]+\/|[a-z]+(\/|)/,
+    /(https|http)?:\/\/(?:www\.|(?!www))mesto-front.nomoredomainsmonster.ru\/[a-z]+\/|[a-z]+\/|[a-z]+(\/|)/,
   ];
 
   const { origin } = req.headers;
