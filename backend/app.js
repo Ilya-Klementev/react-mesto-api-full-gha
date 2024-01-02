@@ -27,7 +27,7 @@ app.use(express.json());
 app.use(helmet());
 app.use(cookieParser());
 app.use(limiter);
-app.use(cors);
+app.use(cors());
 
 mongoose.connect(DB_URL || 'mongodb://127.0.0.1:27017/mestodb')
   .then(() => {
@@ -44,13 +44,13 @@ app.get('/crash-test', () => {
 
 app.get('/', (req, res) => { res.redirect('/signin'); });
 
-app.post('signin', celebrate(validationRequestSignin), userController.login);
-app.post('signup', celebrate(validationRequestSignup), userController.createUser);
+app.post('/signin', celebrate(validationRequestSignin), userController.login);
+app.post('/signup', celebrate(validationRequestSignup), userController.createUser);
 
 app.use(middlewareAuth);
 
-app.use('users', usersRoutes);
-app.use('cards', cardsRoutes);
+app.use('/users', usersRoutes);
+app.use('/cards', cardsRoutes);
 
 app.all('*', (req, res, next) => {
   next(new NotFoundError('Запрашиваемая страница не найдена12'));
