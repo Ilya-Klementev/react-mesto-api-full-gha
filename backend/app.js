@@ -42,7 +42,7 @@ app.get('/crash-test', () => {
   }, 0);
 });
 
-app.use('/', middlewareAuth);
+app.get('/', (req, res) => { res.redirect('/signin'); });
 
 app.post('/signin', celebrate(validationRequestSignin), userController.login);
 app.post('/signup', celebrate(validationRequestSignup), userController.createUser);
@@ -50,7 +50,9 @@ app.post('/signup', celebrate(validationRequestSignup), userController.createUse
 app.use('/users', middlewareAuth, usersRoutes);
 app.use('/cards', middlewareAuth, cardsRoutes);
 
-app.use((req, res, next) => next(new NotFoundError('Запрашиваемая страница не найдена11')));
+app.all('*', (req, res, next) => {
+  next(new NotFoundError('Запрашиваемая страница не найдена12'));
+});
 
 app.use(errorLogger);
 app.use(errors());
