@@ -5,7 +5,7 @@ const cors = (req, res, next) => {
     'localhost:3001',
     'http://localhost:3001',
     'http://127.0.0.1:3001',
-    /(https|http)?:\/\/(?:www\.|(?!www))mesto-front.nomoredomainsmonster.ru\/[a-z]+\/|[a-z]+\/|[a-z]+(\/|)/,
+    /(https|http)?:\/\/(?:www\.|(?!www))mesto.klementev.nomoredomainsmonster.ru\/[a-z]+\/|[a-z]+\/|[a-z]+(\/|)/,
   ];
 
   const { origin } = req.headers;
