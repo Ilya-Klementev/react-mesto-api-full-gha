@@ -5,12 +5,12 @@
   
 Пожалуйста, прикрепите в это описание ссылку на сайт, размещенный на Яндекс.Облаке.
 
-Адрес репозитория: https://github.com/...
+Адрес репозитория: https://github.com/Ilya-Klementev/react-mesto-api-full-gha.git
 
 ## Ссылки на проект
 
-IP-адрес x.x.x.x
+IP-адрес 62.84.119.79
 
-Frontend https://...
+Frontend https://mesto.klementev.nomoredomainsmonster.ru
 
-Backend https://...
+Backend https://mesto.klementev.nomoredomainsmonster.ru/api
