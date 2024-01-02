@@ -42,6 +42,8 @@ app.get('/crash-test', () => {
   }, 0);
 });
 
+app.use('/', middlewareAuth);
+
 app.post('/signin', celebrate(validationRequestSignin), userController.login);
 app.post('/signup', celebrate(validationRequestSignup), userController.createUser);
 
