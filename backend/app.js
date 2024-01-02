@@ -44,13 +44,13 @@ app.get('/crash-test', () => {
 
 app.get('/', (req, res) => { res.redirect('/signin'); });
 
-app.post('/signin', celebrate(validationRequestSignin), userController.login);
-app.post('/signup', celebrate(validationRequestSignup), userController.createUser);
+app.post('signin', celebrate(validationRequestSignin), userController.login);
+app.post('signup', celebrate(validationRequestSignup), userController.createUser);
 
 app.use(middlewareAuth);
 
-app.use('/users', usersRoutes);
-app.use('/cards', cardsRoutes);
+app.use('users', usersRoutes);
+app.use('cards', cardsRoutes);
 
 app.all('*', (req, res, next) => {
   next(new NotFoundError('Запрашиваемая страница не найдена12'));
