@@ -42,8 +42,8 @@ app.get('/crash-test', () => {
   }, 0);
 });
 
-app.post('/signin', celebrate(validationRequestSignin), userController.login);
-app.post('/signup', celebrate(validationRequestSignup), userController.createUser);
+app.post('/api/signin', celebrate(validationRequestSignin), userController.login);
+app.post('/api/signup', celebrate(validationRequestSignup), userController.createUser);
 
 app.use('/users', middlewareAuth, usersRoutes);
 app.use('/cards', middlewareAuth, cardsRoutes);
