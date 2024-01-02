@@ -36,7 +36,7 @@ mongoose.connect(DB_URL || 'mongodb://127.0.0.1:27017/mestodb')
 
 app.use(requestLogger);
 
-app.get('/crash-test', () => {
+app.get('/api/crash-test', () => {
   setTimeout(() => {
     throw new Error('Сервер сейчас упадёт');
   }, 0);
@@ -45,8 +45,8 @@ app.get('/crash-test', () => {
 app.post('/api/signin', celebrate(validationRequestSignin), userController.login);
 app.post('/api/signup', celebrate(validationRequestSignup), userController.createUser);
 
-app.use('/users', middlewareAuth, usersRoutes);
-app.use('/cards', middlewareAuth, cardsRoutes);
+app.use('/api/users', middlewareAuth, usersRoutes);
+app.use('/api/cards', middlewareAuth, cardsRoutes);
 
 app.use((req, res, next) => next(new NotFoundError('Запрашиваемая страница не найдена')));
 
