@@ -1,4 +1,4 @@
-const adressServer = 'https://mesto.klementev.nomoredomainsmonster.ru/api';
-const addressAuth = 'https://mesto.klementev.nomoredomainsmonster.ru/api';
+const adressServer = 'https://api.mesto.klementev.nomoredomainsmonster.ru';
+const addressAuth = 'https://api.mesto.klementev.nomoredomainsmonster.ru';
 
 export {  adressServer, addressAuth };
