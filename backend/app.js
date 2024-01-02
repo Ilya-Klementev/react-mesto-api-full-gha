@@ -42,11 +42,11 @@ app.get('/crash-test', () => {
   }, 0);
 });
 
-app.post('api/signin', celebrate(validationRequestSignin), userController.login);
-app.post('api/signup', celebrate(validationRequestSignup), userController.createUser);
+app.post('/api/signin', celebrate(validationRequestSignin), userController.login);
+app.post('/api/signup', celebrate(validationRequestSignup), userController.createUser);
 
-app.use('api/users', middlewareAuth, usersRoutes);
-app.use('api/cards', middlewareAuth, cardsRoutes);
+app.use('/api/users', middlewareAuth, usersRoutes);
+app.use('/api/cards', middlewareAuth, cardsRoutes);
 
 app.use((req, res, next) => next(new NotFoundError('Запрашиваемая страница не найдена')));
 
