@@ -42,7 +42,7 @@ app.get('/crash-test', () => {
   }, 0);
 });
 
-app.get('/', (req, res) => { res.redirect('/signin'); });
+//app.get('/', (req, res) => { res.redirect('/signup'); });
 
 app.post('/signin', celebrate(validationRequestSignin), userController.login);
 app.post('/signup', celebrate(validationRequestSignup), userController.createUser);
