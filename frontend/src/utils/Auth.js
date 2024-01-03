@@ -3,7 +3,6 @@ import { addressAuth } from "./utils.js";
 class Auth {
   constructor(addressAuth) {
     this.addressAuth = addressAuth;
-    this.jwt = localStorage.getItem("jwt");
     this._headers = {
       "Content-Type": "application/json",
     };
