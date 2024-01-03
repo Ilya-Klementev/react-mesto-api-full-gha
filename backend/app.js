@@ -21,7 +21,7 @@ const userController = require('./controllers/users');
 const { handleError } = require('./middlewares/errors/handleError');
 const NotFoundError = require('./middlewares/errors/NotFoundError');
 const { validationRequestSignin, validationRequestSignup } = require('./middlewares/validationRequest');
-const { cors } = require('./middlewares/cors');
+const cors = require('./middlewares/cors');
 
 app.use(express.json());
 app.use(helmet());
