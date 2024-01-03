@@ -36,17 +36,10 @@ mongoose.connect(DB_URL || 'mongodb://127.0.0.1:27017/mestodb')
 
 app.use(requestLogger);
 
-app.get('/crash-test', (req, res, next) => {
-  setTimeout(() => {
-    try {
-      throw new Error('Сервер сейчас упадёт');
-    } catch (error) {
-      next(error); // Passing the error to the error handler middleware
-    }
-  }, 1000); // Introduce a delay of 1 second before throwing the error
-//  setTimeout(() => {
-//     throw new Error({ message: 'Сервер сейчас упадёт' });
-//   }, 0);
+app.get('/crash-test', () => {
+  process.nextTick(() => {
+    throw new Error('Сервер сейчас упадёт');
+  });
 });
 
 app.post('/signin', celebrate(validationRequestSignin), userController.login);
