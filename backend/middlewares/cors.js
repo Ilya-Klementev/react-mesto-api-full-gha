@@ -7,6 +7,7 @@ const cors = (req, res, next) => {
   ];
 
   // const { origin } = req.headers;
+  console.log('ssss');
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Credentials', true);
   // if (allowedCors.includes(origin)) {
