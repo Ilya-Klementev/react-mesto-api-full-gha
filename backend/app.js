@@ -42,12 +42,12 @@ app.get('/crash-test', () => {
   }, 0);
 });
 
-//app.get('/', (req, res) => { res.redirect('/signup'); });
+app.get('/', (req, res) => { res.redirect('/signup'); });
 
 app.post('/signin', celebrate(validationRequestSignin), userController.login);
 app.post('/signup', celebrate(validationRequestSignup), userController.createUser);
 
-//app.use(middlewareAuth);
+app.use(middlewareAuth);
 
 app.use('/users', usersRoutes);
 app.use('/cards', cardsRoutes);
