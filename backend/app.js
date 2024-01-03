@@ -37,9 +37,9 @@ mongoose.connect(DB_URL || 'mongodb://127.0.0.1:27017/mestodb')
 app.use(requestLogger);
 
 app.get('/crash-test', () => {
-  process.nextTick(() => {
+  setTimeout(() => {
     throw new Error('Сервер сейчас упадёт');
-  });
+  }, 0);
 });
 
 app.post('/signin', celebrate(validationRequestSignin), userController.login);
