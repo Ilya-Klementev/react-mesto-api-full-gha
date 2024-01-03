@@ -1,18 +1,19 @@
 const cors = (req, res, next) => {
   const allowedCors = [
-    'localhost:3000',
     'http://localhost:3000',
-    'http://127.0.0.1:3000',
-    /(https|http)?:\/\/(?:www\.|(?!www))mesto.klementev.nomoredomainsmonster.ru\/[a-z]+\/|[a-z]+\/|[a-z]+(\/|)/,
+    'https://mesto.klementev.nomoredomainsmonster.ru',
   ];
 
   const { origin } = req.headers;
-  console.log('ssss');
 
   if (allowedCors.includes(origin)) {
     res.header('Access-Control-Allow-Origin', origin);
     res.header('Access-Control-Allow-Credentials', true);
+  } else {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Credentials', true);
   }
+
   const { method } = req;
   const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
   const requestHeaders = req.headers['access-control-request-headers'];
@@ -20,10 +21,10 @@ const cors = (req, res, next) => {
   if (method === 'OPTIONS') {
     res.header('Access-Control-Allow-Methods', DEFAULT_ALLOWED_METHODS);
     res.header('Access-Control-Allow-Headers', requestHeaders);
-    return res.end();
+    return res.status(200).end();
   }
 
   return next();
 };
 
-module.exports = { cors };
+module.exports = cors;
