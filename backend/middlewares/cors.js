@@ -1,8 +1,8 @@
 const cors = (req, res, next) => {
   const allowedCors = [
-    'localhost:3000',
-    'http://localhost:3000',
-    'http://127.0.0.1:3000',
+    'localhost:3001',
+    'http://localhost:3001',
+    'http://127.0.0.1:3001',
     /(https|http)?:\/\/(?:www\.|(?!www))mesto.klementev.nomoredomainsmonster.ru\/[a-z]+\/|[a-z]+\/|[a-z]+(\/|)/,
   ];
 
