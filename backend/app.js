@@ -27,7 +27,7 @@ app.use(express.json());
 app.use(helmet());
 app.use(cookieParser());
 app.use(limiter);
-app.use(cors());
+app.use(cors);
 
 mongoose.connect(DB_URL || 'mongodb://127.0.0.1:27017/mestodb')
   .then(() => {
