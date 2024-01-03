@@ -216,7 +216,7 @@ function App() {
         <BrowserRouter>
           <Header loggedIn = {loggedIn} onExitProfile={handleExitProfile}/>
           <Routes>
-            <Route path="*" element={loggedIn ? <Navigate to="/" /> : <Navigate to="/signup" />} />
+            <Route path="*" element={loggedIn ? <Navigate to="/" /> : <Navigate to="/signin" />} />
             <Route path="/" element={<ProtectedRoute Component={Main} {...propsMainComponent} loggedIn={loggedIn}/>} />
             <Route path="/signin" element={loggedIn ? <Navigate to="/" /> : <Login onSubmit={handleAuthorization}/>}/>
             <Route path="/signup" element={loggedIn ? <Navigate to="/" /> : <Register onSubmit={handleRegistration}/>}/>
