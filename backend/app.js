@@ -53,7 +53,7 @@ app.use('/users', usersRoutes);
 app.use('/cards', cardsRoutes);
 
 app.all('*', (req, res, next) => {
-  next(new NotFoundError('Запрашиваемая страница не найдена12'));
+  next(new NotFoundError('Запрашиваемая страница не найдена1245'));
 });
 
 app.use(errorLogger);
