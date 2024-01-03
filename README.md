@@ -13,4 +13,4 @@ IP 62.84.119.79
 
 Frontend https://mesto.klementev.nomoredomainsmonster.ru
 
-Backend https://mesto.klementev.nomoredomainsmonster.ru/api
+Backend https://api.mesto.klementev.nomoredomainsmonster.ru
