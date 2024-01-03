@@ -47,7 +47,7 @@ app.use(requestLogger);
 app.post('/signin', celebrate(validationRequestSignin), userController.login);
 app.post('/signup', celebrate(validationRequestSignup), userController.createUser);
 
-app.use(middlewareAuth());
+app.use(middlewareAuth);
 
 app.use('/users', usersRoutes);
 app.use('/cards', cardsRoutes);
