@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес IP 62.84.119.79
+IP 62.84.119.79
 
 Frontend https://mesto.klementev.nomoredomainsmonster.ru
 
